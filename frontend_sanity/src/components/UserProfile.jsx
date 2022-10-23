@@ -46,7 +46,7 @@ const UserProfile = () => {
 
   const logout = () => {
     localStorage.clear();
-		googleLogout();
+    googleLogout();
     navigate('/login');
   };
 
@@ -72,15 +72,14 @@ const UserProfile = () => {
             {user.userName}
           </h1>
           <div className="absolute top-0 z-1 right-0 p-2">
-            {userId === User.googleId && (               
-                  <button
-                    type="button"
-                    className=" bg-white p-2 rounded-full cursor-pointer outline-none shadow-md"
-                    onClick={logout}
-                  >
-                    <AiOutlineLogout color="red" fontSize={21} />
-                  </button>
-                
+            {userId === User.googleId && (
+              <button
+                type="button"
+                className=" bg-white p-2 rounded-full cursor-pointer outline-none shadow-md"
+                onClick={logout}
+              >
+                <AiOutlineLogout color="red" fontSize={21} />
+              </button>
             )}
           </div>
         </div>
