@@ -28,7 +28,7 @@ const Login = () => {
       userName: name,
       image: picture,
     };
-    client.createIfNotExists(doc).then(() => {
+    client.createOrReplace(doc).then(() => {
       navigate('/', { replace: true });
     });
   };
