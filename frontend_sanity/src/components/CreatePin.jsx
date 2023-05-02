@@ -32,7 +32,7 @@ const CreatePin = ({ user }) => {
           setLoading(false);
         })
         .catch((error) => {
-          console.log('Upload failed:', error.message);
+          // console.log('Upload failed:', error.message);
         });
     } else {
       setLoading(false);

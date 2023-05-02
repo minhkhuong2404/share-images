@@ -33,7 +33,7 @@ const Login = () => {
     });
   };
   const responseGoogleFail = (response) => {
-    console.log(response);
+    // console.log(response);
   };
 
   return (
