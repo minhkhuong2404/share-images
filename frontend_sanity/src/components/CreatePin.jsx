@@ -32,7 +32,7 @@ const CreatePin = ({ user }) => {
           setLoading(false);
         })
         .catch((error) => {
-					// eslint-disable-next-line no-console
+          // eslint-disable-next-line no-console
           console.log('Upload failed:', error.message);
         });
     } else {
