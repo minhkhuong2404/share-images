@@ -71,23 +71,32 @@ module.exports = {
             transform: 'translateZ(160px)',
           },
         },
+        animate: {
+          '0%': {
+            transform: 'rotate(0deg)',
+          },
+          '100%': {
+            transform: 'rotate(360)',
+          },
+        },
       },
       animation: {
         'slide-in': 'slide-in 0.5s ease-out',
-        'slide-fwd': ' slide-fwd 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both',
+        'slide-fwd':
+          ' slide-fwd 0.45s cubic-bezier(0.250, 0.460, 0.450, 0.940) both',
       },
       transitionProperty: {
         height: 'height',
       },
+      cursor: {
+        'zoom-in': 'zoom-in',
+        pointer: 'pointer',
+      },
     },
-    cursor: {
-      'zoom-in': 'zoom-in',
-      pointer: 'pointer',
+    variants: {
+      // backgroundColor: ['active'],
+      extend: {},
     },
+    plugins: [],
   },
-  variants: {
-    // backgroundColor: ['active'],
-    extend: {},
-  },
-  plugins: [],
 };

@@ -5,14 +5,16 @@ function Spinner({ message }) {
   return (
     <div className="flex flex-col justify-center items-center w-full h-full">
       <Loader
-        type="Circles"
-        color="#00BFFF"
-        height={50}
-        width={200}
+        type="MutatingDots"
+        color="#00DBDE"
+        secondaryColor="#FC00FF"
+        radius="12.5"
+        height={100}
+        width={100}
         className="m-5"
       />
 
-      <p className="text-lg text-center px-2">{message}</p>
+      <p className="text-white text-lg text-center px-2">{message}</p>
     </div>
   );
 }

@@ -58,7 +58,7 @@ const Pin = ({ pin }) => {
         onMouseEnter={() => setPostHovered(true)}
         onMouseLeave={() => setPostHovered(false)}
         onClick={() => navigate(`/pin-detail/${_id}`)}
-        className=" relative cursor-zoom-in w-auto hover:shadow-lg rounded-lg overflow-hidden transition-all duration-500 ease-in-out"
+        className=" relative cursor-zoom-in w-auto hover:shadow-xl rounded-lg overflow-hidden transition-all duration-500 ease-in-out hover:shadow-gray-700"
       >
         {image && (
           <img className="rounded-lg w-full " src={(urlFor(image).width(250).url())} alt="user-post" />)}
@@ -133,7 +133,7 @@ const Pin = ({ pin }) => {
           src={postedBy?.image}
           alt="user-profile"
         />
-        <p className="font-semibold capitalize">{postedBy?.userName}</p>
+        <p className="text-white font-semibold capitalize">{postedBy?.userName}</p>
       </Link>
     </div>
   );

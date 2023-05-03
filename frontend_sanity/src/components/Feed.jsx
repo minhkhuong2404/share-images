@@ -37,7 +37,7 @@ const Feed = () => {
   return (
     <div>
       {pins?.length === 0 && (
-        <div className="mt-10 text-center text-xl ">
+        <div className="text-white mt-10 text-center text-xl ">
           Start adding your images here
         </div>
       )}
