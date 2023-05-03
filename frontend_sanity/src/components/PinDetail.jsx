@@ -61,7 +61,7 @@ const PinDetail = ({ user }) => {
   return (
     <>
       {pinDetail && (
-        <div className="flex xl:flex-row flex-col m-auto bg-white" style={{ maxWidth: '1500px', borderRadius: '32px' }}>
+        <div className="flex xl:flex-row flex-col m-auto bg-gray-700" style={{ maxWidth: '1500px', borderRadius: '32px' }}>
           <div className="flex justify-center items-center md:items-start flex-initial">
             <img
               className="rounded-t-3xl rounded-b-lg"
@@ -85,16 +85,16 @@ const PinDetail = ({ user }) => {
               </a>
             </div>
             <div>
-              <h1 className="text-4xl font-bold break-words mt-3">
+              <h1 className="text-white text-4xl font-bold break-words mt-3">
                 {pinDetail.title}
               </h1>
               <p className="mt-3">{pinDetail.about}</p>
             </div>
-            <Link to={`/user-profile/${pinDetail?.postedBy._id}`} className="flex gap-2 mt-5 items-center bg-white rounded-lg ">
+            <Link to={`/user-profile/${pinDetail?.postedBy._id}`} className="flex gap-2 mt-5 items-center bg-gray-700 rounded-lg ">
               <img src={pinDetail?.postedBy.image} className="w-10 h-10 rounded-full" alt="user-profile" />
-              <p className="font-bold">{pinDetail?.postedBy.userName}</p>
+              <p className="text-white font-bold">{pinDetail?.postedBy.userName}</p>
             </Link>
-            <h2 className="mt-5 text-2xl">Comments</h2>
+            <h2 className="mt-5 text-2xl text-white">Comments</h2>
             <div className="max-h-370 overflow-y-auto">
               {pinDetail?.comments?.map((item) => (
                 <div className="flex gap-2 mt-5 items-center bg-white rounded-lg" key={item.comment}>

@@ -26,7 +26,10 @@ const CreatePin = ({ user }) => {
       setWrongImageType(false);
       setLoading(true);
       client.assets
-        .upload('image', selectedFile, { contentType: selectedFile.type, filename: selectedFile.name })
+        .upload('image', selectedFile, {
+          contentType: selectedFile.type,
+          filename: selectedFile.name,
+        })
         .then((document) => {
           setImageAsset(document);
           setLoading(false);
@@ -68,30 +71,23 @@ const CreatePin = ({ user }) => {
     } else {
       setFields(true);
 
-      setTimeout(
-        () => {
-          setFields(false);
-        },
-        2000,
-      );
+      setTimeout(() => {
+        setFields(false);
+      }, 2000);
     }
   };
   return (
     <div className="flex flex-col justify-center items-center mt-5 lg:h-4/5">
       {fields && (
-        <p className="text-red-500 mb-5 text-xl transition-all duration-150 ease-in ">Please add all fields.</p>
+        <p className="text-red-500 mb-5 text-xl transition-all duration-150 ease-in ">
+          Please add all fields.
+        </p>
       )}
       <div className=" flex lg:flex-row flex-col justify-center items-center bg-gray-800 lg:p-5 p-3 lg:w-4/5  w-full">
         <div className="bg-gray-800 p-3 flex flex-0.7 w-full">
           <div className=" flex justify-center items-center flex-col border-2 border-dotted border-gray-300 p-3 w-full h-420">
-            {loading && (
-              <Spinner />
-            )}
-            {
-              wrongImageType && (
-                <p>It&apos;s wrong file type.</p>
-              )
-            }
+            {loading && <Spinner />}
+            {wrongImageType && <p>It&apos;s wrong file type.</p>}
             {!imageAsset ? (
               // eslint-disable-next-line jsx-a11y/label-has-associated-control
               <label>
@@ -169,16 +165,23 @@ const CreatePin = ({ user }) => {
 
           <div className="flex flex-col">
             <div>
-              <p className="text-white mb-2 font-semibold text:lg sm:text-xl">Choose Pin Category</p>
+              <p className="text-white mb-2 font-semibold text:lg sm:text-xl">
+                Choose Pin Category
+              </p>
               <select
                 onChange={(e) => {
                   setCategory(e.target.value);
                 }}
                 className="outline-none w-4/5 text-base border-b-2 border-gray-200 p-2 rounded-md cursor-pointer"
               >
-                <option value="others" className="sm:text-bg bg-gray-800">Select Category</option>
+                <option value="others" className="sm:text-bg bg-gray-800">
+                  Select Category
+                </option>
                 {categories.map((item) => (
-                  <option className="text-base border-0 outline-none capitalize bg-white text-black " value={item.name}>
+                  <option
+                    className="text-base border-0 outline-none capitalize bg-white text-black "
+                    value={item.name}
+                  >
                     {item.name}
                   </option>
                 ))}
